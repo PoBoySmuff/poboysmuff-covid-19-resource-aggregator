@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    background-color: grey;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+main * {
+    border: 1px solid black;
+    
+}
+
+.stats {
+    margin-top: 60px;
+}
+
+.banner {
+    position: fixed;
+    width: 100%;
+    border: 2px solid green; 
+    height: 60px;
+    padding: 10px;
+
+}
+
+.banner-items {
+    position: relative;
+    top: 10px;
+}
+
+
+section {
+    border: 1px solid black;
+}
+
+.container {
+    text-align: center;
+}
