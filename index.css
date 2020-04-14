@@ -12,12 +12,24 @@
     
 }*/
 
+.thumbnail {
+    width: 120px;
+    height: 120px;
+    border: none;
+    float: left;
+    position: relative;
+    bottom: 40px;
+}
+
 .banner {
+    text-align: left;
     position: fixed;
     width: 100%;
     border: 2px solid green; 
-    height: 60px;
+    height: 80px;
     padding: 10px;
+    background-color: green;
+
 }
 
 .banner-items {
@@ -36,10 +48,11 @@ button, input {
 }
 
 section {
-   /* border: 1px solid black;*/
+    border: 1px solid black;
     padding: 20px;
-    margin: 10px;
+    
     padding-top: 40px;
+    border-collapse: collapse;
 }
 
 .container {
@@ -82,7 +95,7 @@ img, li{
 
 h2 {
     font-size: 34px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 h3 {

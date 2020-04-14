@@ -94,7 +94,7 @@ function displayNews(responseJson) {
         console.log(url);
         $('.js-news-results').append(`
         <li><h3><a href=${url}>${responseJson.articles[i].title}</a></h3>
-        <img src='${responseJson.articles[i].urlToImage}'>
+        <img src='${responseJson.articles[i].urlToImage}' alt='news article result thumbnail'>
         <p>${responseJson.articles[i].description}</p></li>`);
     }
 };
@@ -142,7 +142,7 @@ function displayVideos(responseJson) {
        $('#js-videos-results').append(
             `<li><h3><a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}'>
             ${responseJson.items[i].snippet.title}</a></h3>
-            <img src='${responseJson.items[i].snippet.thumbnails.medium.url}'>
+            <img src='${responseJson.items[i].snippet.thumbnails.medium.url}' alt='youtube video result thumbnail'>
             <p>${responseJson.items[i].snippet.description}</p>
             
             </li>`
