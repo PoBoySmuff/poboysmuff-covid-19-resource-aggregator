@@ -22,24 +22,40 @@
             <section class='stats'>
                 <h2>Global Stats</h2>
                 <div class='global-stats'>
-                    <p>Display results here</p>
+                    <table id='js-global-results'></table>
+
+                    
+                    <p id='js-error-message-global' class='error-message'></p>
                 </div>
                 <h2>Stats by Country</h2>
-                <p>Insert form here</p>
-                <div class='stats-by-country'>
-                    <p>results here</p>
-                </div>
+                <form id='js-form-country-search'>
+                    <label for="country">Search by country to see results in that country:</label>
+                    <input type="text" name='country' id='js-country' placeholder="Switzerland, Mexico, South Africa">
+                    <button type='submit'>Submit</button>
+                    <div class='stats-by-country'>
+                        <table id='js-country-results'></table>
+                        <p id='js-error-message-country' class='error-message'></p>
+                    </div>
+                </form>
+            
+                
             </section>
             <section class='articles'>
-                <h2>Section 2: Relevant news</h2>
+                <h2>Most Recent News</h2>
                 <div class='news'>
-                    <p>Holds most recent news, incl thumbnail, link and description</p>
+                    <ul class='js-news-results'>
+
+                    </ul>
+                    <p id='js-error-message-news' class='error-message'></p>
                 </div>
             </section>
             <section>
-                <h2>Section 3: Relevant videos</h2>
+                <h2>Most Recent Videos</h2>
                 <div class='videos'>
-                    <p>Holds most recent videos, incl thumbnail link and description</p>
+                    <ul id='js-videos-results'>
+
+                    </ul>
+                    <p id='js-error-message-videos' class='error-message'></p>
                 </div>
             </section>
         </div>

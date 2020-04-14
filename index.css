@@ -1,20 +1,16 @@
 * {
     box-sizing: border-box;
-    background-color: grey;
+    /*background-color: grey;*/
     
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
 }
 
-main * {
+/*.container * {
     border: 1px solid black;
     
-}
-
-.stats {
-    margin-top: 60px;
-}
+}*/
 
 .banner {
     position: fixed;
@@ -22,7 +18,6 @@ main * {
     border: 2px solid green; 
     height: 60px;
     padding: 10px;
-
 }
 
 .banner-items {
@@ -30,11 +25,75 @@ main * {
     top: 10px;
 }
 
+input { 
+    margin: 10px;
+}
+
+button, input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
 
 section {
-    border: 1px solid black;
+   /* border: 1px solid black;*/
+    padding: 20px;
+    margin: 10px;
+    padding-top: 40px;
 }
 
 .container {
     text-align: center;
+    padding-top: 70px;
+}
+
+table, th, td {
+    
+    margin-top: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+table {
+    width: 70%;
+    
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+th, td {
+    
+    padding: 10px;
+    font-size: 28px;
+}
+
+ul {
+    text-align: center;
+    padding: 20px;
+    
+}
+
+img, li{
+    width: 100%;
+    padding: 30px;
+    border-top: 1px solid black;
+}
+
+h2 {
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 24px;
+}
+
+label, button, input {
+    font-size: 24px;
 }
