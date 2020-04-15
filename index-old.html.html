@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" lang='en'>
+    <title>Checking in on COVID-19</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class='banner'>
+        <div class='banner-items'>
+            <img class='thumbnail'
+                src="https://www.evaluate.com/sites/default/files/styles/lead_t/public/Virus%20Image.jpeg?h=41c1a581&itok=zbphk3AL"
+                alt="website thumbnail - picture of COVID-19">
+            <p>Keeping up with Covid-19</p>
+        </div>
+    </header>
+
+    <main>
+        <div class='container'>
+            <section class='stats'>
+                <h2>Global COVID-19 Statistics</h2>
+                <div class='global-stats'>
+                    <table id='js-global-results'></table>
+
+
+                    <p id='js-error-message-global' class='error-message'></p>
+                </div>
+                <h2>Statistics By Country</h2>
+                <form id='js-form-country-search'>
+                    <label for="country">Enter a country to display numbers in that country:</label>
+                    <input type="text" name='country' id='js-country' placeholder="Switzerland, Mexico">
+                    
+                    <button type='submit'>Submit</button>
+                    <div class='stats-by-country'>
+                        <h3 class='table-header'>USA Statistics</h3>
+                        <table id='js-country-results'></table>
+                        <p id='js-error-message-country' class='error-message'></p>
+                    </div>
+                </form>
+
+
+            </section>
+            <div class='articles-and-videos'>
+                <section class='articles'>
+                    <h2>Most Recent News</h2>
+                    <div class='news'>
+                        <ul class='js-news-results'>
+
+                        </ul>
+                        <p id='js-error-message-news' class='error-message'></p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Most Recent Videos</h2>
+                    <div class='videos'>
+                        <ul id='js-videos-results'>
+
+                        </ul>
+                        <p id='js-error-message-videos' class='error-message'></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
