@@ -7,52 +7,46 @@
     margin-top: 0;
 }
 
-/*.container * {
-    border: 1px solid black;
-    
-}*/
+body {
+    background-color: lightblue;
+}
 
 form {
     padding: 20px;
     max-width: 80%;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-}
 
 
 
-.thumbnail {
-    width: 120px;
-    height: 120px;
-    border: none;
-    float: left;
-    position: relative;
-    bottom: 40px;
-}
 
 .banner {
-    text-align: left;
+    text-align: center;
     position: fixed;
     width: 100%;
-    border: 2px solid green; 
-    height: 80px;
+    max-height: 200px;
+    border: 2px solid black; 
+    
     padding: 10px;
-    background-color: green;
+    background-color: grey;
+    
 
 }
 
 .banner-items {
     position: relative;
     top: 10px;
+    /*display: inline;*/
+    text-align: center;
+    padding-bottom: 20px;
+    
 }
 
 input { 
     margin: 10px;
 }
 
-button, input {
+button, select {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
@@ -68,7 +62,7 @@ section {
 
 .container {
     text-align: center;
-    padding-top: 70px;
+    padding-top: 200px;
     
 }
 
@@ -107,27 +101,26 @@ img, li{
 }
 
 h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
-    font-family: 'Roboto Condensed';
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 40px;
 }
 
 p {
-    font-size: 24px;
+    font-size: 20px;
 }
 
-label, button, input {
+label, button, select {
     font-size: 24px;
 }
 
 .table-header {
     margin-bottom: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .capitalize {
@@ -140,6 +133,39 @@ label, button, input {
     }
 }
 
-h1, h2, h3 {
-    font-family: 'Roboto Condensed', sans-serif;
+.global-stats {
+    margin-bottom: 80px;
+}
+
+.color-1 {
+    background-color: grey;
+}
+
+.color-2 {
+    background-color: white;
+}
+
+.error-message {
+    color: red;
+}
+
+select {
+    width: 50%;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+nav * {
+    display: inline;
+    text-align: center;
+    padding: 10px;
+}
+
+.anchor {
+    position: relative;
+    left: 0px;
+    top: -200px;
 }
