@@ -7,10 +7,6 @@
     margin-top: 0;
 }
 
-body {
-    background-color: lightblue;
-}
-
 /*.container * {
     border: 1px solid black;
     
@@ -19,6 +15,10 @@ body {
 form {
     padding: 20px;
     max-width: 80%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -33,13 +33,13 @@ form {
 }
 
 .banner {
-    text-align: center;
+    text-align: left;
     position: fixed;
     width: 100%;
-    border: 2px solid black; 
+    border: 2px solid green; 
     height: 80px;
     padding: 10px;
-    background-color: grey;
+    background-color: green;
 
 }
 
@@ -108,7 +108,8 @@ img, li{
 
 h2 {
     font-size: 34px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Roboto Condensed';
 }
 
 h3 {
@@ -126,7 +127,7 @@ label, button, input {
 
 .table-header {
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .capitalize {
@@ -139,18 +140,6 @@ label, button, input {
     }
 }
 
-.global-stats {
-    margin-bottom: 80px;
-}
-
-.color-1 {
-    background-color: grey;
-}
-
-.color-2 {
-    background-color: white;
-}
-
-.error-message {
-    color: red;
+h1, h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
 }
