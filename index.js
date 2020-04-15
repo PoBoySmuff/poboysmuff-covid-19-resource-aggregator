@@ -83,7 +83,7 @@ function loadRecentNews() {
             'X-Api-Key': newsAPIKey
         })
     };
-    fetch('http://newsapi.org/v2/everything?q=covid-19&from=2020-03-14&sortBy=published', options)
+    fetch('https://newsapi.org/v2/everything?q=covid-19&from=2020-03-14&sortBy=published', options)
         .then(response => {
             if (response.ok) {
                 return response.json();
