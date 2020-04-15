@@ -27,12 +27,15 @@ function displayGlobal(responseJson) {
     $('#js-global-results').append(`
     <tr class='color-1'><th>Total cases:</th><td> ${responseJson.cases}</td></tr>
     <tr class='color-2'><th>Total deaths:</th><td> ${responseJson.deaths}</td></tr>
-    <tr class='color-3'><th>Total recovered:</th><td> ${responseJson.recovered}</td></tr>
+    <tr class='color-1'><th>Total recovered:</th><td> ${responseJson.recovered}</td></tr>
     `);
 
 }
 
 function loadCountryStats(country = 'USA') {
+    $('#js-error-message-country').empty();
+    $('#js-country-results').empty();
+    $('.table-header').empty();
     if (country.toLowerCase() === 'usa') {
         country = 'USA'; // for display purposes, want USA to be capitalized in table header
     }
@@ -60,17 +63,17 @@ function loadCountryStats(country = 'USA') {
 function displayCountry(responseJson, country) {
     console.log('hi3');
     console.log(responseJson);
-    $('#js-error-message-country').empty();
-    $('#js-country-results').empty();
+    
 
     $('#js-country-results').append(`
     <tr class='color-1'><th>New Cases:</th><td> ${responseJson.todayCases}</td></tr>
     <tr class='color-2'><th>Total cases:</th><td> ${responseJson.cases}</td></tr>
-    <tr class='color-3'><th>Total deaths:</th><td> ${responseJson.deaths}</td></tr>
-    <tr class='color-4'><th>Total recovered:</th><td> ${responseJson.recovered}</td></tr>
+    <tr class='color-1'><th>Total deaths:</th><td> ${responseJson.deaths}</td></tr>
+    <tr class='color-2'><th>Total recovered:</th><td> ${responseJson.recovered}</td></tr>
     `);
-    $('.table-header').text(`${country} Statistics`);
-    $('.table-header').addClass('capitalize');
+    country = country[0].toUpperCase() + country.slice(1);
+    $('.table-header').text(`Showing statistics for: ${country}`);
+    //$('.table-header').addClass('capitalize');
 }
 
 function loadRecentNews() {
@@ -180,7 +183,7 @@ function pageLoad() {
     //Call to load global stats, recent news, and recent videos on pageload
     //Call watchForm function to allow user to search stats by country
     loadGlobalStats();
-    loadCountryStats(); //default to USA stats on page load
+    //loadCountryStats(); //default to USA stats on page load
     loadRecentNews();
     loadRecentVideos();
     watchForm();

@@ -29,13 +29,13 @@ form {
 }
 
 .banner {
-    text-align: left;
+    text-align: center;
     position: fixed;
     width: 100%;
-    border: 2px solid green; 
+    border: 2px solid black; 
     height: 80px;
     padding: 10px;
-    background-color: green;
+    background-color: grey;
 
 }
 
@@ -104,7 +104,7 @@ img, li{
 
 h2 {
     font-size: 34px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h3 {
@@ -122,7 +122,7 @@ label, button, input {
 
 .table-header {
     margin-bottom: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .capitalize {
@@ -133,4 +133,20 @@ label, button, input {
     .articles-and-videos {
         display: flex;
     }
+}
+
+.global-stats {
+    margin-bottom: 80px;
+}
+
+.color-1 {
+    background-color: grey;
+}
+
+.color-2 {
+    background-color: white;
+}
+
+.error-message {
+    color: red;
 }

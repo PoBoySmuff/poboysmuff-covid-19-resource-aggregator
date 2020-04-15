@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" lang='en'>
-    <title>Checking in on COVID-19</title>
+    <title>COVID-19 Resource Aggregator</title>
     <link rel="stylesheet" href="index.css">
 
 </head>
@@ -16,7 +16,7 @@
             <img class='thumbnail'
                 src="https://www.evaluate.com/sites/default/files/styles/lead_t/public/Virus%20Image.jpeg?h=41c1a581&itok=zbphk3AL"
                 alt="website thumbnail - picture of COVID-19">
-            <p>Keeping up with Covid-19</p>
+            <p>Coronavirus (COVID-19) Resource Aggregator</p>
         </div>
     </header>
 
@@ -30,15 +30,17 @@
 
                     <p id='js-error-message-global' class='error-message'></p>
                 </div>
-                <h2>Statistics By Country</h2>
+                <h2>COVID-19 Statistics By Country</h2>
                 <form id='js-form-country-search'>
                     <label for="country">Enter a country to display numbers in that country:</label>
                     <input type="text" name='country' id='js-country' placeholder="Switzerland, Mexico">
                     <button type='submit'>Submit</button>
+                    <p id='js-error-message-country' class='error-message'></p>
                     <div class='stats-by-country'>
-                        <h3 class='table-header'>USA Statistics</h3>
+                        <p class='table-header'></p>
+                        
                         <table id='js-country-results'></table>
-                        <p id='js-error-message-country' class='error-message'></p>
+                        
                     </div>
                 </form>
 
