@@ -32,34 +32,45 @@ function displayGlobal(responseJson) {
 
 }
 
-function loadCountryStats(country = 'usa') {
-    console.log(country);
-    fetch('https://coronavirus-19-api.herokuapp.com/countries/' + country)
+function loadCountryStats(country = 'USA') {
+    if (country.toLowerCase() === 'usa') {
+        country = 'USA'; // for display purposes, want USA to be capitalized in table header
+    }
+    country = country.trim();
+    if (country) {
+        fetch('https://coronavirus-19-api.herokuapp.com/countries/' + country)
 
-        .then(response => {
-            if (response.ok) {
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
                 return response.json();
-            }
-            throw new Error(response.statusText);
-        })
-        .then(responseJson => displayCountry(responseJson))
-        .catch(err => {
-            $('#js-error-message-country').text(`something went wrong in loadCountryStats: ${err.message}`);
+            })
+            .then(responseJson => displayCountry(responseJson, country))
+            .catch(err => {
+                $('#js-error-message-country').text(`something went wrong in loadCountryStats: ${err.message}`);
+            });
 
-        });
+    }
+    else {
+        $('#js-error-message-country').text('Please enter a valid country');
+    }
 }
 
-function displayCountry(responseJson) {
+function displayCountry(responseJson, country) {
     console.log('hi3');
     console.log(responseJson);
     $('#js-error-message-country').empty();
     $('#js-country-results').empty();
+
     $('#js-country-results').append(`
     <tr class='color-1'><th>New Cases:</th><td> ${responseJson.todayCases}</td></tr>
     <tr class='color-2'><th>Total cases:</th><td> ${responseJson.cases}</td></tr>
     <tr class='color-3'><th>Total deaths:</th><td> ${responseJson.deaths}</td></tr>
     <tr class='color-4'><th>Total recovered:</th><td> ${responseJson.recovered}</td></tr>
     `);
+    $('.table-header').text(`${country} Statistics`);
+    $('.table-header').addClass('capitalize');
 }
 
 function loadRecentNews() {
@@ -85,7 +96,7 @@ function loadRecentNews() {
 function displayNews(responseJson) {
     $('#js-error-message-news').empty();
     $('.js-news-results').empty();
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
         let url = responseJson.articles[i].url;
         if (url.endsWith('/')) {
             url = url.slice(0, -1);
@@ -111,7 +122,7 @@ function loadRecentVideos() {
         key: youtubeAPIKey,
         q: 'covid-19',
         part: 'snippet',
-        maxResults: 7,
+        maxResults: 5,
         relevanceLanguage: 'en'
     };
     const queryString = formatQueryParams(params);
@@ -122,38 +133,38 @@ function loadRecentVideos() {
         })
     };
     fetch(url, options)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error(response.statusText);
-    })
-    .then(responseJson => displayVideos(responseJson))
-    .catch(err => {
-        $('#js-error-message-videos').text(`something went wrong in loadRecentVideos: ${err.message}`);
-    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => displayVideos(responseJson))
+        .catch(err => {
+            $('#js-error-message-videos').text(`something went wrong in loadRecentVideos: ${err.message}`);
+        })
 }
 
 function displayVideos(responseJson) {
     $('#js-videos-results').empty();
     console.log(responseJson);
-    for (let i=0; i<responseJson.items.length; i++) {
+    for (let i = 0; i < responseJson.items.length; i++) {
         console.log(responseJson.items[i].id.videoId);
-       $('#js-videos-results').append(
+        $('#js-videos-results').append(
             `<li><h3><a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}'>
             ${responseJson.items[i].snippet.title}</a></h3>
             <img src='${responseJson.items[i].snippet.thumbnails.medium.url}' alt='youtube video result thumbnail'>
             <p>${responseJson.items[i].snippet.description}</p>
             
             </li>`
-            
+
         )
 
         /*<a href=''>
         /*>
             </li>*/
     };
-    
+
 }
 
 function watchForm() {

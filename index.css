@@ -12,6 +12,13 @@
     
 }*/
 
+form {
+    padding: 20px;
+    max-width: 80%;
+}
+
+
+
 .thumbnail {
     width: 120px;
     height: 120px;
@@ -58,6 +65,7 @@ section {
 .container {
     text-align: center;
     padding-top: 70px;
+    
 }
 
 table, th, td {
@@ -91,6 +99,7 @@ img, li{
     width: 100%;
     padding: 30px;
     border-top: 1px solid black;
+    list-style: none;
 }
 
 h2 {
@@ -109,4 +118,19 @@ p {
 
 label, button, input {
     font-size: 24px;
+}
+
+.table-header {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 800px) {
+    .articles-and-videos {
+        display: flex;
+    }
 }
