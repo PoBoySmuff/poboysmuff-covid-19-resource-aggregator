@@ -23,7 +23,7 @@ form {
 .banner {
     text-align: center;
     position: fixed;
-    width: 100%;
+    max-width: 100%;
     max-height: 300px;
     border: 2px solid black; 
     
